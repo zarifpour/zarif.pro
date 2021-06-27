@@ -1,18 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="assets/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <title>Daniel Zarifpour | Software Engineer</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <title>Daniel Zarifpour | Home</title>
+    <script src="jquery-3.6.0.min.js"></script>
   </head>
   <body>
-    <p>Hello world!</p>
+    <div class="text-box">
+      <div class="flex">
+        <div class="zarif fade-in">
+          <a href="https://www.linkedin.com/in/zarifpour/" target="_blank">
+            Daniel Zarifpour
+          </a>
+        </div>
+        <div class="break"></div>
+        <div class="fade-in anim-delay-2s no-pointer" style="font-size: 2vw">
+          Creator | Engineer
+        </div>
+        <div class="button-wrapper footer fade-in anim-delay-4s">
+          <div class="button">
+            <a
+              href="/Zarifpour-Daniel-Resume.pdf"
+              download="Zarifpour-Daniel-Resume.pdf"
+              target="_blank"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-file-text"
+              >
+                <script xmlns="" />
+                <script xmlns="" />
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
+              </svg>
+            </a>
+          </div>
+          <div class="button">
+            <a href="mailto:daniel@zarif.pro">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-mail"
+              >
+                <script xmlns="" />
+                <script xmlns="" />
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="three.min.js"></script>
+    <script>
+      let scene, camera, renderer, stars, starGeo;
+
+      function init() {
+        scene = new THREE.Scene();
+
+        camera = new THREE.PerspectiveCamera(
+          60,
+          window.innerWidth / window.innerHeight,
+          1,
+          1000
+        );
+        camera.position.z = 1;
+        camera.rotation.x = Math.PI / 2;
+
+        renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        starGeo = new THREE.Geometry();
+        for (let i = 0; i < 6000; i++) {
+          star = new THREE.Vector3(
+            Math.random() * 600 - 300,
+            Math.random() * 600 - 300,
+            Math.random() * 600 - 300
+          );
+          star.velocity = 0;
+          star.acceleration = 0.0001;
+          starGeo.vertices.push(star);
+        }
+
+        let sprite = new THREE.TextureLoader().load("star.png");
+        let starMaterial = new THREE.PointsMaterial({
+          color: 0xaaaaaa,
+          size: 0.7,
+          map: sprite,
+        });
+
+        stars = new THREE.Points(starGeo, starMaterial);
+        scene.add(stars);
+
+        window.addEventListener("resize", onWindowResize, false);
+
+        animate();
+      }
+      function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      }
+      function animate() {
+        starGeo.vertices.forEach((p) => {
+          p.velocity += p.acceleration;
+          p.y -= p.velocity;
+
+          if (p.y < -200) {
+            p.y = 200;
+            p.velocity = 0;
+          }
+        });
+        starGeo.verticesNeedUpdate = true;
+        stars.rotation.y += 0.0005;
+
+        renderer.render(scene, camera);
+        requestAnimationFrame(animate);
+      }
+      init();
+
+      $(".zarif").bind("animationend webkitAnimationEnd", function () {
+        $(".zarif").addClass("gradient-text");
+      });
+    </script>
   </body>
 </html>
