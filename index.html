@@ -12,73 +12,115 @@
     <link rel="icon" type="image/png" href="/logo.png" />
     <title>Daniel Zarifpour | Home</title>
     <script src="jquery-3.6.0.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-C6GB8KCC90"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-C6GB8KCC90");
+    </script>
   </head>
   <body>
     <div class="text-box">
       <div class="flex">
         <div class="zarif fade-in">
-          <a href="https://www.linkedin.com/in/zarifpour/" target="_blank">
             Daniel Zarifpour
-          </a>
         </div>
         <div class="break"></div>
-        <div class="fade-in anim-delay-2s no-pointer" style="font-size: 2vw; display: flex;">
-          <div class="gradient">Creator</div> <div style="margin: 0px 12px;">|</div> <div class="gradient">Engineer</div>
+        <div class="fade-in anim-delay-2s no-pointer zarif-2">
+          <div class="gradient">Creator</div>
+          <div style="margin: 0px 12px">|</div>
+          <div class="gradient">Engineer</div>
         </div>
         <div class="button-wrapper footer fade-in anim-delay-4s">
-          <div class="button btn-3">
-            <a
-              href="/Zarifpour-Daniel-Resume.pdf"
-              download="Zarifpour-Daniel-Resume.pdf"
-              target="_blank"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-file-text"
+          <button class="btn-3">
+            <span>
+              <a
+                href="/Zarifpour-Daniel-Resume.pdf"
+                download="Zarifpour-Daniel-Resume.pdf"
+                target="_blank"
               >
-                <script xmlns="" />
-                <script xmlns="" />
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                />
-                <polyline points="14 2 14 8 20 8" />
-                <line x1="16" y1="13" x2="8" y2="13" />
-                <line x1="16" y1="17" x2="8" y2="17" />
-                <polyline points="10 9 9 9 8 9" />
-              </svg>
-            </a>
-          </div>
-          <div class="button btn-3">
-            <a href="mailto:daniel@zarif.pro">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-mail"
-              >
-                <script xmlns="" />
-                <script xmlns="" />
-                <path
-                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                />
-                <polyline points="22,6 12,13 2,6" />
-              </svg>
-            </a>
-          </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-file-text svg-icon"
+                >
+                  <script xmlns="" />
+                  <script xmlns="" />
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                  <polyline points="10 9 9 9 8 9" />
+                </svg>
+              </a>
+            </span>
+          </button>
+          <button class="btn-3">
+            <span>
+              <a href="https://www.linkedin.com/in/zarifpour/" target="_blank">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-linkedin svg-icon"
+                >
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </a>
+            </span>
+          </button>
+          <button class="btn-3">
+            <span>
+              <a href="mailto:daniel@zarif.pro">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-mail svg-icon"
+                >
+                  <script xmlns="" />
+                  <script xmlns="" />
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </a>
+            </span>
+          </button>
         </div>
       </div>
     </div>
@@ -158,6 +200,14 @@
       $(".anim-delay-2s").bind("animationend webkitAnimationEnd", function () {
         $(".gradient").addClass("gradient-text");
       });
+      // $(".anim-delay-4s").bind("animationend webkitAnimationEnd", function () {
+      //   $(".svg-icon").addClass("gradient-text");
+      // });
+      // $("button").hover(function () {
+      //   $(this).find(".svg-icon").addClass("black");
+      // }, function () {
+      //   $(this).find(".svg-icon").removeClass("black");
+      // });
     </script>
   </body>
 </html>
