@@ -22,11 +22,11 @@
           </a>
         </div>
         <div class="break"></div>
-        <div class="fade-in anim-delay-2s no-pointer" style="font-size: 2vw">
-          Creator | Engineer
+        <div class="fade-in anim-delay-2s no-pointer" style="font-size: 2vw; display: flex;">
+          <div class="gradient">Creator</div> <div style="margin: 0px 12px;">|</div> <div class="gradient">Engineer</div>
         </div>
         <div class="button-wrapper footer fade-in anim-delay-4s">
-          <div class="button">
+          <div class="button btn-3">
             <a
               href="/Zarifpour-Daniel-Resume.pdf"
               download="Zarifpour-Daniel-Resume.pdf"
@@ -56,7 +56,7 @@
               </svg>
             </a>
           </div>
-          <div class="button">
+          <div class="button btn-3">
             <a href="mailto:daniel@zarif.pro">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -154,6 +154,9 @@
 
       $(".zarif").bind("animationend webkitAnimationEnd", function () {
         $(".zarif").addClass("gradient-text");
+      });
+      $(".anim-delay-2s").bind("animationend webkitAnimationEnd", function () {
+        $(".gradient").addClass("gradient-text");
       });
     </script>
   </body>

@@ -110,7 +110,7 @@ canvas {
   bottom: 25px;
 }
 .gradient-text{
-  background: linear-gradient(to right, red,salmon,gold, springgreen);
+  background: linear-gradient(to right, red, blueviolet, royalblue, cyan, springgreen, gold, salmon);
   background-size: 200% 200%;
   animation: rainbow 5s ease-in-out infinite;
   background-clip: text;
