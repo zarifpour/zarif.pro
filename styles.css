@@ -2,10 +2,20 @@ input[type=text], input[type=button], input[type=submit] {
 -webkit-appearance: none;
 -webkit-border-radius: 0;
 }
-
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
 body {
+  position: fixed;
   width: 100vw;
   height: -webkit-fill-available;
+  /* height: 100vh; */
   margin: 0;
   background: black;
   /* overflow: hidden; */
@@ -13,6 +23,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.chrome-body {
+  height: 100vh;
 }
 a {
   color: inherit; /* blue colors for links too */
@@ -24,6 +37,7 @@ a {
 .zarif {
   /* font-size: clamp(1rem, 0.4706rem + 2.8235vw, 4rem); */
   font-size: 4vw;
+  width: max-content;
 }
 .zarif-2 {
   font-size: 2vw; 
@@ -87,6 +101,7 @@ canvas {
   word-spacing: 12px;
   text-transform: uppercase;
   color:rgb(238, 238, 238);
+  width: min-content;
 
 }
 .button-wrapper {

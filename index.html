@@ -10,7 +10,7 @@
       rel="stylesheet"
     />
     <link rel="icon" type="image/png" href="/logo.png" />
-    <title>Daniel Zarifpour | Home</title>
+    <title>Daniel Zarifpour</title>
     <script src="jquery-3.6.0.min.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
@@ -29,10 +29,8 @@
   </head>
   <body>
     <div class="text-box">
-      <div class="flex">
-        <div class="zarif fade-in">
-            Daniel Zarifpour
-        </div>
+      <div class="flex noselect">
+        <div class="zarif fade-in">Daniel Zarifpour</div>
         <div class="break"></div>
         <div class="fade-in anim-delay-2s no-pointer zarif-2">
           <div class="gradient">Creator</div>
@@ -143,7 +141,11 @@
 
         renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
+
+        var canvas = renderer.domElement;
+        canvas.setAttribute("id", "canvas");
+
+        document.body.appendChild(canvas);
 
         starGeo = new THREE.Geometry();
         for (let i = 0; i < 6000; i++) {
@@ -208,6 +210,26 @@
       // }, function () {
       //   $(this).find(".svg-icon").removeClass("black");
       // });
+      var counter = 0;
+      $("#canvas").click(function () {
+        counter++;
+        if (counter < 15) {
+          starGeo.vertices.forEach((p) => {
+            p.velocity += 0.0000000000001;
+            p.y -= p.velocity;
+
+            if (p.y < -200) {
+              p.y = 200;
+              p.velocity = 0;
+            }
+          });
+          starGeo.verticesNeedUpdate = true;
+          stars.rotation.y += 0.0000000000001;
+
+          renderer.render(scene, camera);
+          requestAnimationFrame(animate);
+        }
+      });
     </script>
   </body>
 </html>
