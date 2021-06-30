@@ -75,6 +75,7 @@ a {
 }
 .body {
   font-size: large;
+  width: max-content;
 }
 canvas {
   position: absolute;
