@@ -2,6 +2,13 @@ input[type=text], input[type=button], input[type=submit] {
 -webkit-appearance: none;
 -webkit-border-radius: 0;
 }
+#landing {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  align-items: center;
+}
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -11,22 +18,19 @@ input[type=text], input[type=button], input[type=submit] {
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
-.gradient {
+canvas, button, .gradient-text {
+  pointer-events: auto;
+}
+body, #landing, .text-box, .gradient, .footer {
   pointer-events: none;
 }
-/* .gradient.active {
-  pointer-events: auto;
-} */
 body {
-  position: fixed;
   width: 100vw;
-  height: -webkit-fill-available;
-  /* height: 100vh; */
+  height: 100vh;
   margin: 0;
   background: black;
   /* overflow: hidden; */
   overflow-x: hidden;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -84,7 +88,7 @@ a {
   width: max-content;
 }
 canvas {
-  position: absolute;
+  position: fixed;
   top:0;
   left:0;
   z-index: -1;
@@ -108,7 +112,7 @@ canvas {
   word-spacing: 12px;
   text-transform: uppercase;
   color:rgb(238, 238, 238);
-  width: min-content;
+  /* width: min-content; */
 
 }
 .button-wrapper {
@@ -137,8 +141,10 @@ canvas {
   color: black;
 }
 .footer {
-  position: absolute;
   bottom: 25px;
+  position: fixed;
+  height: fit-content;
+  width: -webkit-fill-available;
 }
 .gradient-text {
   pointer-events: auto;
@@ -149,11 +155,7 @@ canvas {
   -webkit-background-clip:text;
   transition: color 1.5s ease-in-out;
 }
-.gradient-text:hover {
-  color:rgba(0,0,0,0);
-  cursor: pointer;
-}
-.gradient-text-toggle {
+.gradient-text:hover, .gradient-text.active {
   color:rgba(0,0,0,0);
   cursor: pointer;
 }
@@ -217,7 +219,7 @@ button:hover span::before, button:hover span::after{
   height: 100%;
 } 
 
-.btn-2::before, .btn-2::after{
+/* .btn-2::before, .btn-2::after{
   transition-delay: 0s;
 }
 .btn-2 span::before, .btn-2 span::after{
@@ -244,9 +246,7 @@ button:hover span::before, button:hover span::after{
 }
 .btn-2:hover span::before, .btn-2:hover span::after{
   transition-delay: 0s;
-}
-
-
+} */
 
 .btn-3::after{
   left: 0;
