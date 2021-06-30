@@ -1,41 +1,50 @@
-input[type=text], input[type=button], input[type=submit] {
--webkit-appearance: none;
--webkit-border-radius: 0;
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
 }
 #landing {
-  height: 100%;
-  display: flex;
+  /* MOBILE LANDING FIX */
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  /* MOBILE LANDING FIX */
+
+  /* display: flex;
   justify-content: center;
   vertical-align: middle;
-  align-items: center;
+  align-items: center; */
 }
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
-canvas, button, .gradient-text {
+canvas,
+button,
+.gradient-text {
   pointer-events: auto;
 }
-body, #landing, .text-box, .gradient, .footer {
+body,
+#landing,
+.text-box,
+.gradient,
+.footer {
   pointer-events: none;
 }
 body {
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   margin: 0;
   background: black;
   /* overflow: hidden; */
   overflow-x: hidden;
   justify-content: center;
   align-items: center;
-}
-.chrome-body {
-  height: 100vh;
 }
 a {
   color: inherit; /* blue colors for links too */
@@ -50,38 +59,39 @@ a {
   width: max-content;
 }
 .zarif-2 {
-  font-size: 2vw; 
+  font-size: 2vw;
   display: flex;
 }
-.heading, .zarif {
-  font-weight:900;
+.heading,
+.zarif {
+  font-weight: 900;
 }
 .no-pointer {
   cursor: default;
 }
 .fade-in {
-	opacity: 1;
-	animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 2s;
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
   animation-fill-mode: forwards;
 }
 .anim-delay-2s {
-	opacity: 0;
+  opacity: 0;
   animation-delay: 2s;
 }
 .anim-delay-4s {
-	opacity: 0;
+  opacity: 0;
   animation-delay: 4s;
 }
 @keyframes fadeInOpacity {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .body {
   font-size: large;
@@ -89,8 +99,8 @@ a {
 }
 canvas {
   position: fixed;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   z-index: -1;
 }
 .flex {
@@ -107,13 +117,12 @@ canvas {
 }
 .text-box {
   font-size: 60px;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   letter-spacing: 7px;
   word-spacing: 12px;
   text-transform: uppercase;
-  color:rgb(238, 238, 238);
+  color: rgb(238, 238, 238);
   /* width: min-content; */
-
 }
 .button-wrapper {
   display: flex;
@@ -128,8 +137,8 @@ canvas {
   font-weight: bold;
   /* padding: 15px; */
   padding: 12px;
-  margin-left:20px;
-  margin-right:20px;
+  margin-left: 20px;
+  margin-right: 20px;
   word-spacing: normal;
   letter-spacing: 5px;
   border: 1px solid white;
@@ -148,23 +157,36 @@ canvas {
 }
 .gradient-text {
   pointer-events: auto;
-  background: linear-gradient(to right, red, blueviolet, royalblue, cyan, springgreen, gold, salmon);
+  background: linear-gradient(
+    to right,
+    red,
+    blueviolet,
+    royalblue,
+    cyan,
+    springgreen,
+    gold,
+    salmon
+  );
   background-size: 200% 200%;
   animation: rainbow 5s ease-in-out infinite;
   background-clip: text;
-  -webkit-background-clip:text;
+  -webkit-background-clip: text;
   transition: color 1.5s ease-in-out;
 }
-.gradient-text:hover, .gradient-text.active {
-  color:rgba(0,0,0,0);
-  cursor: pointer;
+.gradient-text.active {
+  color: rgba(0, 0, 0, 0);
 }
-@keyframes rainbow { 
-  0%{background-position:left}
-  50%{background-position:right}
-  100%{background-position:left}
+@keyframes rainbow {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
 }
-
 
 .svg-icon {
   color: white;
@@ -175,7 +197,7 @@ canvas {
 button:hover {
   background: lightgray;
 } */
-button{
+button {
   position: relative;
   border: none;
   cursor: pointer;
@@ -184,40 +206,43 @@ button{
   margin: 0px 20px;
 }
 
-
-button::before, button::after{
-  content:"";
+button::before,
+button::after {
+  content: "";
   width: 0;
   height: 2px;
   position: absolute;
   transition: all 0.2s linear;
 }
 button::before {
-    background: linear-gradient(to right, blueviolet, royalblue, cyan);
+  background: linear-gradient(to right, blueviolet, royalblue, cyan);
 }
 button::after {
-    background: linear-gradient(to left, gold, salmon);
+  background: linear-gradient(to left, gold, salmon);
 }
 
-span::before, span::after{
-  content:"";
-  width:2px;
-  height:0;
+span::before,
+span::after {
+  content: "";
+  width: 2px;
+  height: 0;
   position: absolute;
   transition: all 0.2s linear;
 }
 span::before {
-    background: linear-gradient(to top, salmon, red, darkviolet);
+  background: linear-gradient(to top, salmon, red, darkviolet);
 }
 span::after {
-    background: linear-gradient(to top, yellow, springgreen, cyan);
+  background: linear-gradient(to top, yellow, springgreen, cyan);
 }
-button:hover::before, button:hover::after{
+button:hover::before,
+button:hover::after {
   width: 100%;
 }
-button:hover span::before, button:hover span::after{
+button:hover span::before,
+button:hover span::after {
   height: 100%;
-} 
+}
 
 /* .btn-2::before, .btn-2::after{
   transition-delay: 0s;
@@ -248,38 +273,51 @@ button:hover span::before, button:hover span::after{
   transition-delay: 0s;
 } */
 
-.btn-3::after{
+.btn-3::after {
   left: 0;
   bottom: 0;
   transition-delay: 0.6s;
 }
-.btn-3 span::after{
+.btn-3 span::after {
   transition-delay: 0.4s;
   right: 0;
-  bottom: 0
+  bottom: 0;
 }
-.btn-3::before{
+.btn-3::before {
   right: 0;
   top: 0;
   transition-delay: 0.2s;
 }
-.btn-3 span::before{
+.btn-3 span::before {
   transition-delay: 0s;
   left: 0;
   top: 0;
 }
 
-.btn-3:hover::after{
+.btn-3:hover::after {
   transition-delay: 0s;
 }
-.btn-3:hover span::after{
+.btn-3:hover span::after {
   transition-delay: 0.2s;
 }
-.btn-3:hover::before{
+.btn-3:hover::before {
   transition-delay: 0.4s;
 }
-.btn-3:hover span::before{
+.btn-3:hover span::before {
   transition-delay: 0.6s;
+}
+
+@media (any-hover: hover) {
+  .gradient-text:hover {
+      color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #landing {
+    height: 100vh;
+  }
 }
 
 @media (max-width: 460px) {
