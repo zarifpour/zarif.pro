@@ -11,6 +11,12 @@ input[type=text], input[type=button], input[type=submit] {
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
+.gradient {
+  pointer-events: none;
+}
+/* .gradient.active {
+  pointer-events: auto;
+} */
 body {
   position: fixed;
   width: 100vw;
@@ -134,7 +140,8 @@ canvas {
   position: absolute;
   bottom: 25px;
 }
-.gradient-text{
+.gradient-text {
+  pointer-events: auto;
   background: linear-gradient(to right, red, blueviolet, royalblue, cyan, springgreen, gold, salmon);
   background-size: 200% 200%;
   animation: rainbow 5s ease-in-out infinite;
@@ -142,7 +149,11 @@ canvas {
   -webkit-background-clip:text;
   transition: color 1.5s ease-in-out;
 }
-.gradient-text:hover{
+.gradient-text:hover {
+  color:rgba(0,0,0,0);
+  cursor: pointer;
+}
+.gradient-text-toggle {
   color:rgba(0,0,0,0);
   cursor: pointer;
 }

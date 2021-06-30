@@ -28,13 +28,13 @@
     </script>
   </head>
   <body class="noselect">
-    <div class="text-box">
-      <div class="flex noselect">
-        <div class="zarif fade-in">Daniel Zarifpour</div>
+    <div class="text-box no-pointer">
+      <div class="flex">
+        <div class="zarif fade-in gradient">Daniel Zarifpour</div>
         <div class="break"></div>
-        <div class="fade-in anim-delay-2s no-pointer zarif-2">
+        <div class="fade-in anim-delay-2s zarif-2">
           <div class="gradient">Creator</div>
-          <div style="margin: 0px 12px">|</div>
+          <div class="gradient" style="margin: 0px 12px">|</div>
           <div class="gradient">Engineer</div>
         </div>
         <div class="button-wrapper footer fade-in anim-delay-4s">
@@ -216,19 +216,18 @@
       init();
 
       $(".zarif").bind("animationend webkitAnimationEnd", function () {
-        $(".zarif").addClass("gradient-text");
+        $(this).addClass("gradient-text");
       });
+
       $(".anim-delay-2s").bind("animationend webkitAnimationEnd", function () {
         $(".gradient").addClass("gradient-text");
       });
-      // $(".anim-delay-4s").bind("animationend webkitAnimationEnd", function () {
-      //   $(".svg-icon").addClass("gradient-text");
-      // });
-      // $("button").hover(function () {
-      //   $(this).find(".svg-icon").addClass("black");
-      // }, function () {
-      //   $(this).find(".svg-icon").removeClass("black");
-      // });
+
+      var gradient = false;
+      $(".zarif, .gradient").click(function () {
+        $(this).toggleClass("gradient-text-toggle");
+      });
+      
       var counter = 0;
       $("#canvas").click(function () {
         counter++;
@@ -249,6 +248,15 @@
           requestAnimationFrame(animate);
         }
       });
+
+      // $(".anim-delay-4s").bind("animationend webkitAnimationEnd", function () {
+      //   $(".svg-icon").addClass("gradient-text");
+      // });
+      // $("button").hover(function () {
+      //   $(this).find(".svg-icon").addClass("black");
+      // }, function () {
+      //   $(this).find(".svg-icon").removeClass("black");
+      // });
     </script>
   </body>
 </html>
