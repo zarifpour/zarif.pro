@@ -9,13 +9,12 @@
       href="https://fonts.googleapis.com/css?family=Raleway&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/png" href="/logo.png" />
-    <title>Daniel Zarifpour</title>
-    <script src="jquery-3.6.0.min.js"></script>
+    <link rel="icon" type="image/png" href="/assets/logo.png" />
+    <script src="/assets/js/jquery-3.6.0.min.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-C6GB8KCC90"
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-C6GB8KCC90"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -23,9 +22,10 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
+      
       gtag("config", "G-C6GB8KCC90");
-    </script>
+      </script>
+      <title>Daniel Zarifpour</title>
   </head>
   <body class="noselect">
     <div id="landing" class="flex">
@@ -79,7 +79,7 @@
         </svg>
       </div>
     </div>
-    <div id="section1" class="flex">
+    <div id="skill-sphere-container" class="flex">
       <canvas
         id="tagcanvas"
         width="560"
@@ -91,6 +91,7 @@
           position: relative;
           margin: 0 auto;
         "
+        class="fade-in"
       ></canvas>
     </div>
     <div style="display: none">
@@ -126,15 +127,6 @@
           <li><a href="#truffle_">Truffle</a></li>
           <li><a href="#pyqt_">PyQT</a></li>
         </ul>
-        <!-- <ul>
-          <li><a href="#fake7">SVGGraph</a></li>
-          <li><a href="#fake8">JPEG Saver</a></li>
-          <li><a href="#fake9">Downloads</a></li>
-          <li><a href="#fake10">Google</a></li>
-          <li><a href="#fake11">Yahoo!</a></li>
-          <li><a href="#fake12">Microsoft</a></li>
-          <li><a href="#fake13">BBC</a></li>
-        </ul> -->
       </div>
     </div>
     <div class="footer">
@@ -242,201 +234,41 @@
         </button>
       </div>
     </div>
-    <!-- 3D Tag Canvas -->
+
+    <!----------------- 
+      3D Tag Canvas 
+    ------------------>
     <script
-      src="/jquery.tagcanvas.min.js"
+      src="/assets/js/jquery.tagcanvas.min.js"
       type="text/javascript"
       async=""
     ></script>
+    <script src="/assets/js/tag-canvas.js" type="text/javascript"></script>
+
+    <!----------------- 
+      Star Canvas 
+    ------------------>
+    <script src="/assets/js/three.min.js" type="text/javascript"></script>
+    <script src="/assets/js/star-canvas.js" type="text/javascript"></script>
+
+    <!----------------- 
+      Basic functions 
+    ------------------>
     <script type="text/javascript">
-      //<![CDATA[
-      window.onload = function () {
-        TagCanvas.wheelZoom = false;
-        TagCanvas.textFont = "Raleway, sans-serif";
-        TagCanvas.textColour = "white";
-        TagCanvas.textHeight = 20;
-        TagCanvas.outlineMethod = "size";
-        TagCanvas.outlineIncrease = 10;
-        TagCanvas.maxSpeed = 0.03;
-        TagCanvas.minBrightness = 0.2;
-        TagCanvas.depth = 0.92;
-        TagCanvas.pulsateTo = 0.6;
-        TagCanvas.initial = [0.1, -0.1];
-        TagCanvas.decel = 0.98;
-        TagCanvas.reverse = true;
-        TagCanvas.hideTags = false;
-        TagCanvas.shadow = false;
-        TagCanvas.shadowBlur = 3;
-        TagCanvas.weight = false;
-        TagCanvas.imageScale = null;
-        TagCanvas.fadeIn = 1000;
-        TagCanvas.clickToFront = 600;
-        // TagCanvas.weight = true;
-        // TagCanvas.weightMode = "colour";
-        // TagCanvas.weightGradient = "{0:'#f00', 0.33:'#ff0', 0.66:'#0f0', 1:'#00f'}";
-        try {
-          TagCanvas.Start("tagcanvas", "taglist");
-        } catch (e) {
-          console.log("Canvas error.");
-        }
-      };
-      function restart() {
-        TagCanvas.shape = shape;
-        TagCanvas.lock = lock;
-        TagCanvas.Start("tagcanvas", ttags);
-      }
-      function changetags(t) {
-        ttags = t;
-        restart();
-      }
-      // function tpu(s) {
-      //   document.getElementById("sout").innerHTML = s.innerHTML;
-      //   return false;
-      // }
-      //]]>
-    </script>
-    <!-- Star Canvas -->
-    <script src="three.min.js"></script>
-    <script>
-      let scene, camera, renderer, stars, starGeo;
-
-      function init() {
-        scene = new THREE.Scene();
-
-        camera = new THREE.PerspectiveCamera(
-          60,
-          window.innerWidth / window.innerHeight,
-          1,
-          1000
-        );
-        camera.position.z = 1;
-        camera.rotation.x = Math.PI / 2;
-
-        renderer = new THREE.WebGLRenderer();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-
-        var canvas = renderer.domElement;
-        canvas.setAttribute("id", "canvas");
-        canvas.setAttribute("class", "fade-in");
-
-        document.body.appendChild(canvas);
-
-        starGeo = new THREE.Geometry();
-        for (let i = 0; i < 6000; i++) {
-          star = new THREE.Vector3(
-            Math.random() * 600 - 300,
-            Math.random() * 600 - 300,
-            Math.random() * 600 - 300
-          );
-          star.velocity = 0;
-          star.acceleration = 0.0001;
-          starGeo.vertices.push(star);
-        }
-
-        let sprite = new THREE.TextureLoader().load("star.png");
-        let starMaterial = new THREE.PointsMaterial({
-          color: 0xaaaaaa,
-          size: 0.7,
-          map: sprite,
-        });
-
-        stars = new THREE.Points(starGeo, starMaterial);
-        scene.add(stars);
-
-        window.addEventListener("resize", onWindowResize, false);
-
-        animate();
-      }
-      function onWindowResize() {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-      }
-      function animate() {
-        starGeo.vertices.forEach((p) => {
-          p.velocity += p.acceleration;
-          p.y -= p.velocity;
-
-          if (p.y < -200) {
-            p.y = 200;
-            p.velocity = 0;
-          }
-        });
-        starGeo.verticesNeedUpdate = true;
-        stars.rotation.y += 0.0005;
-
-        renderer.render(scene, camera);
-        requestAnimationFrame(animate);
-      }
-      init();
-
-      var counter = 0;
-      $("#canvas").click(function () {
-        counter++;
-        if (counter < 69) {
-          starGeo.vertices.forEach((p) => {
-            p.velocity += 0.0000000000001;
-            p.y -= p.velocity;
-
-            if (p.y < -200) {
-              p.y = 200;
-              p.velocity = 0;
-            }
-          });
-          starGeo.verticesNeedUpdate = true;
-          stars.rotation.y += 0.0000000000001;
-
-          renderer.render(scene, camera);
-          requestAnimationFrame(animate);
-        }
-      });
-
-      // $(".anim-delay-4s").bind("animationend webkitAnimationEnd", function() {
-      //   $(".svg-icon").addClass("gradient-text");
-      // });
-      // $("button").hover(function() {
-      //   $(this).find(".svg-icon").addClass("black");
-      // }, function() {
-      //   $(this).find(".svg-icon").removeClass("black");
-      // });
-    </script>
-
-    <!-- Basic Functions -->
-    <script type="text/javascript">
-      $("#section1").height($("#landing").height());
+      $("#skill-sphere-container").height($("#landing").height());
 
       $(window).resize(function () {
-        $("#section1").height($("#landing").height());
+        $("#skill-sphere-container").height($("#landing").height());
       });
-
-      // var footer = $('.footer');
-      // var scrolling = false;
-      // $(window).scroll(function() {
-      //   clearTimeout($.data(this, 'scrollTimer'));
-      //   console.log('scrolling');
-      //   if (!scrolling) {
-      //     console.log('scrolled');
-      //     footer.fadeOut(400);
-      //     scrolling = true;
-      //   }
-      //   $.data(this, 'scrollTimer', setTimeout(function() {
-      //     console.log('done scrolling');
-      //     if (scrolling) {
-      //       footer.fadeIn(400, function() {
-      //         scrolling = false;
-      //       });
-      //     }
-      //   }, 200));
-      // });
-
+      
       $(".zarif").bind("animationend webkitAnimationEnd", function () {
         $(this).addClass("gradient-text");
       });
-
+      
       $(".anim-delay-2s").bind("animationend webkitAnimationEnd", function () {
         $(".gradient").addClass("gradient-text");
       });
-
+      
       var gradient = false;
       $(".zarif, .gradient").click(function () {
         $(this).toggleClass("active");
