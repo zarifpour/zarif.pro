@@ -39,7 +39,104 @@
         </div>
       </div>
     </div>
-    <!-- <div class="text-box" style="height: 500px; display: block">TESTING</div> -->
+    <div id="scroll-hint" class="fade-in anim-delay-6s">
+      <div class="scroll-down">
+        <span>scroll down</span>
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="fal"
+          data-icon="arrow-down"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+          class="svg-inline--fa fa-arrow-down fa-w-14 fa-5x"
+        >
+          <path
+            fill="currentColor"
+            d="M443.5 248.5l-7.1-7.1c-4.7-4.7-12.3-4.7-17 0L241 419.9V44c0-6.6-5.4-12-12-12h-10c-6.6 0-12 5.4-12 12v375.9L28.5 241.4c-4.7-4.7-12.3-4.7-17 0l-7.1 7.1c-4.7 4.7-4.7 12.3 0 17l211 211.1c4.7 4.7 12.3 4.7 17 0l211-211.1c4.8-4.8 4.8-12.3.1-17z"
+            class=""
+          ></path>
+        </svg>
+      </div>
+      <div class="scroll-down scroll-down--left">
+        <span>scroll down</span>
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="fal"
+          data-icon="arrow-down"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+          class="svg-inline--fa fa-arrow-down fa-w-14 fa-5x"
+        >
+          <path
+            fill="currentColor"
+            d="M443.5 248.5l-7.1-7.1c-4.7-4.7-12.3-4.7-17 0L241 419.9V44c0-6.6-5.4-12-12-12h-10c-6.6 0-12 5.4-12 12v375.9L28.5 241.4c-4.7-4.7-12.3-4.7-17 0l-7.1 7.1c-4.7 4.7-4.7 12.3 0 17l211 211.1c4.7 4.7 12.3 4.7 17 0l211-211.1c4.8-4.8 4.8-12.3.1-17z"
+            class=""
+          ></path>
+        </svg>
+      </div>
+    </div>
+    <div id="section1" class="flex">
+      <canvas
+        id="tagcanvas"
+        width="560"
+        height="400"
+        style="
+          max-width: 800px;
+          width: 100%;
+          z-index: 99;
+          position: relative;
+          margin: 0 auto;
+        "
+      ></canvas>
+    </div>
+    <div style="display: none">
+      <div id="taglist">
+        <ul>
+          <li><a href="#git_">Git</a></li>
+          <li><a href="#json_">JSON</a></li>
+          <li><a href="#solidity_">Solidity</a></li>
+          <li><a href="#html_">HTML</a></li>
+          <li><a href="#python_">Python</a></li>
+          <li><a href="#sql_">SQL</a></li>
+          <li><a href="#shopify_">Shopify</a></li>
+          <li><a href="#aws_">AWS</a></li>
+          <li><a href="#wordpress_">WordPress</a></li>
+          <li><a href="#npm_">npm</a></li>
+          <li><a href="#css_">CSS</a></li>
+          <li><a href="#jquery_">jQuery</a></li>
+          <li><a href="#js_">JavaScript</a></li>
+          <li><a href="#c++_">C++</a></li>
+          <li><a href="#java_">Java</a></li>
+          <li><a href="#php_">PHP</a></li>
+          <li><a href="#selenium_">Selenium</a></li>
+          <li><a href="#remix_">Remix</a></li>
+          <li><a href="#ganache_">Ganache</a></li>
+          <li><a href="#hubspot_">HubSpot</a></li>
+          <li><a href="#node.js_">Node.js</a></li>
+          <li><a href="#hiveos_">HiveOS</a></li>
+          <li><a href="#crypto_">Crypto</a></li>
+          <li><a href="#mining_">Mining</a></li>
+          <li><a href="#photoshop_">Photoshop</a></li>
+          <li><a href="#illustrator_">Illustrator</a></li>
+          <li><a href="#premier-pro_">Premier Pro</a></li>
+          <li><a href="#truffle_">Truffle</a></li>
+          <li><a href="#pyqt_">PyQT</a></li>
+        </ul>
+        <!-- <ul>
+          <li><a href="#fake7">SVGGraph</a></li>
+          <li><a href="#fake8">JPEG Saver</a></li>
+          <li><a href="#fake9">Downloads</a></li>
+          <li><a href="#fake10">Google</a></li>
+          <li><a href="#fake11">Yahoo!</a></li>
+          <li><a href="#fake12">Microsoft</a></li>
+          <li><a href="#fake13">BBC</a></li>
+        </ul> -->
+      </div>
+    </div>
     <div class="footer">
       <div class="button-wrapper fade-in anim-delay-4s flex">
         <!-- <button class="btn-3">
@@ -145,7 +242,60 @@
         </button>
       </div>
     </div>
-
+    <!-- 3D Tag Canvas -->
+    <script
+      src="/jquery.tagcanvas.min.js"
+      type="text/javascript"
+      async=""
+    ></script>
+    <script type="text/javascript">
+      //<![CDATA[
+      window.onload = function () {
+        TagCanvas.wheelZoom = false;
+        TagCanvas.textFont = "Raleway, sans-serif";
+        TagCanvas.textColour = "white";
+        TagCanvas.textHeight = 20;
+        TagCanvas.outlineMethod = "size";
+        TagCanvas.outlineIncrease = 10;
+        TagCanvas.maxSpeed = 0.03;
+        TagCanvas.minBrightness = 0.2;
+        TagCanvas.depth = 0.92;
+        TagCanvas.pulsateTo = 0.6;
+        TagCanvas.initial = [0.1, -0.1];
+        TagCanvas.decel = 0.98;
+        TagCanvas.reverse = true;
+        TagCanvas.hideTags = false;
+        TagCanvas.shadow = false;
+        TagCanvas.shadowBlur = 3;
+        TagCanvas.weight = false;
+        TagCanvas.imageScale = null;
+        TagCanvas.fadeIn = 1000;
+        TagCanvas.clickToFront = 600;
+        // TagCanvas.weight = true;
+        // TagCanvas.weightMode = "colour";
+        // TagCanvas.weightGradient = "{0:'#f00', 0.33:'#ff0', 0.66:'#0f0', 1:'#00f'}";
+        try {
+          TagCanvas.Start("tagcanvas", "taglist");
+        } catch (e) {
+          console.log("Canvas error.");
+        }
+      };
+      function restart() {
+        TagCanvas.shape = shape;
+        TagCanvas.lock = lock;
+        TagCanvas.Start("tagcanvas", ttags);
+      }
+      function changetags(t) {
+        ttags = t;
+        restart();
+      }
+      // function tpu(s) {
+      //   document.getElementById("sout").innerHTML = s.innerHTML;
+      //   return false;
+      // }
+      //]]>
+    </script>
+    <!-- Star Canvas -->
     <script src="three.min.js"></script>
     <script>
       let scene, camera, renderer, stars, starGeo;
@@ -167,6 +317,7 @@
 
         var canvas = renderer.domElement;
         canvas.setAttribute("id", "canvas");
+        canvas.setAttribute("class", "fade-in");
 
         document.body.appendChild(canvas);
 
@@ -219,19 +370,6 @@
       }
       init();
 
-      $(".zarif").bind("animationend webkitAnimationEnd", function () {
-        $(this).addClass("gradient-text");
-      });
-
-      $(".anim-delay-2s").bind("animationend webkitAnimationEnd", function () {
-        $(".gradient").addClass("gradient-text");
-      });
-
-      var gradient = false;
-      $(".zarif, .gradient").click(function () {
-        $(this).toggleClass("active");
-      });
-
       var counter = 0;
       $("#canvas").click(function () {
         counter++;
@@ -253,14 +391,56 @@
         }
       });
 
-      // $(".anim-delay-4s").bind("animationend webkitAnimationEnd", function () {
+      // $(".anim-delay-4s").bind("animationend webkitAnimationEnd", function() {
       //   $(".svg-icon").addClass("gradient-text");
       // });
-      // $("button").hover(function () {
+      // $("button").hover(function() {
       //   $(this).find(".svg-icon").addClass("black");
-      // }, function () {
+      // }, function() {
       //   $(this).find(".svg-icon").removeClass("black");
       // });
+    </script>
+
+    <!-- Basic Functions -->
+    <script type="text/javascript">
+      $("#section1").height($("#landing").height());
+
+      $(window).resize(function () {
+        $("#section1").height($("#landing").height());
+      });
+
+      // var footer = $('.footer');
+      // var scrolling = false;
+      // $(window).scroll(function() {
+      //   clearTimeout($.data(this, 'scrollTimer'));
+      //   console.log('scrolling');
+      //   if (!scrolling) {
+      //     console.log('scrolled');
+      //     footer.fadeOut(400);
+      //     scrolling = true;
+      //   }
+      //   $.data(this, 'scrollTimer', setTimeout(function() {
+      //     console.log('done scrolling');
+      //     if (scrolling) {
+      //       footer.fadeIn(400, function() {
+      //         scrolling = false;
+      //       });
+      //     }
+      //   }, 200));
+      // });
+
+      $(".zarif").bind("animationend webkitAnimationEnd", function () {
+        $(this).addClass("gradient-text");
+      });
+
+      $(".anim-delay-2s").bind("animationend webkitAnimationEnd", function () {
+        $(".gradient").addClass("gradient-text");
+      });
+
+      var gradient = false;
+      $(".zarif, .gradient").click(function () {
+        $(this).toggleClass("active");
+      });
     </script>
   </body>
 </html>
