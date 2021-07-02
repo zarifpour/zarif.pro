@@ -96,7 +96,8 @@ button,
 }
 body,
 #landing,
-.text-box,
+.title-box,
+.text-box
 .gradient,
 .footer {
   pointer-events: none;
@@ -122,10 +123,12 @@ a {
 .zarif {
   /* font-size: clamp(1rem, 0.4706rem + 2.8235vw, 4rem); */
   font-size: 4vw;
+  /* font-size: 7vw; */
   width: max-content;
+  /* text-transform: capitalize; */
 }
 .zarif-2 {
-  font-size: 2vw;
+  font-size: 2.25vw;
   display: flex;
 }
 .heading,
@@ -135,6 +138,9 @@ a {
 .no-pointer {
   cursor: default;
 }
+.to-fade-in {
+  opacity: 0;
+}
 .fade-in {
   opacity: 1;
   animation-name: fadeInOpacity;
@@ -142,6 +148,7 @@ a {
   animation-timing-function: ease-in;
   animation-duration: 2s;
   animation-fill-mode: forwards;
+  transition: ease-out;
 }
 .anim-delay-2s {
   opacity: 0;
@@ -150,6 +157,14 @@ a {
 .anim-delay-4s {
   opacity: 0;
   animation-delay: 4s;
+}
+.anim-delay-4-5s {
+  opacity: 0;
+  animation-delay: 4.5s;
+}
+.anim-delay-5s {
+  opacity: 0;
+  animation-delay: 5s;
 }
 .anim-delay-6s {
   opacity: 0;
@@ -185,13 +200,20 @@ canvas {
   height: 0;
   margin-top: 20px;
 }
-.text-box {
+.title-box {
   font-size: 60px;
   letter-spacing: 7px;
   word-spacing: 12px;
   text-transform: uppercase;
-  color: rgb(238, 238, 238);
   /* width: min-content; */
+}
+.title-box, .text-box {
+  color: rgb(238, 238, 238);
+
+}
+.text-box {
+  font-size: 10vw;
+  text-transform: none;
 }
 .button-wrapper {
   display: flex;
@@ -398,7 +420,7 @@ button:hover span::after {
 
 @media (max-width: 460px) {
   .zarif {
-    font-size: 5vw;
+    font-size: 6vw;
   }
   .zarif-2 {
     font-size: 3.5vw;
