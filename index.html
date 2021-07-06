@@ -94,6 +94,19 @@
       </div>
     </div>
 
+    <div id="projects" class="flex" style="display: none;">
+    <!-- <div id="projects" class="flex"> -->
+      <div class="text-box no-pointer">
+          <div style="font-size: 3vw; text-transform: none; text-align: center;">Projects</div>
+          <div class="break"></div>
+          <div class="item-box flex">
+            <img src="/assets/zscalp-logo.png" height="90px">
+            <img class="hover-img" src="/assets/logo.png" height="90px">
+          </div>
+        </div>
+      </div>
+    </div>
+
     
     <div id="skill-sphere-container" class="flex">
       <canvas
@@ -101,7 +114,7 @@
         width="560"
         height="400"
         style="
-          max-width: 800px;
+          max-width: 1000px;
           width: 100%;
           z-index: 99;
           position: relative;
@@ -143,6 +156,7 @@
           <li><a href="#premier-pro_">Premier Pro</a></li>
           <li><a href="#truffle_">Truffle</a></li>
           <li><a href="#pyqt_">PyQT</a></li>
+          <li><a href="#Hardhat_">Hardhat</a></li>
         </ul>
       </div>
     </div>
@@ -272,6 +286,8 @@
       Basic Functions 
     ------------------>
     <script type="text/javascript">
+
+      // Fade in elements in view
       function checkElementLocation() {
         var $window = $(window);
         var bottom_of_window = $window.scrollTop() + $window.height();
@@ -280,7 +296,7 @@
           var $that = $(this);
           var bottom_of_object = $that.position().top + $that.outerHeight();
 
-          //if element is in viewport, add the animate class
+          // if element is in viewport, add the animate class
           if (bottom_of_window > bottom_of_object) {
             $(this).addClass('fade-in');
           } else {
@@ -294,8 +310,28 @@
       $(window).on('scroll', function() {
         checkElementLocation();
       });
+      // end Fade in elements
 
+      // Fade out footer on scroll
+      var elem = $('.footer');
+      var hidden = false;
+      $(window).scroll(function() {
+        if (!hidden) {
+          elem.fadeTo("fast", 0.2);
+        }
+        hidden = true;
+        clearTimeout($.data(this, 'scrollTimer'));
+        $.data(this, 'scrollTimer', setTimeout(function() {
+          if (hidden) {
+            elem.fadeTo(1000, 1, function() {
+              hidden = false;
+            });
+          }
+        }, 500));
+      });
+      // end Fade out footer
 
+      // Dynamic heights for full-page sections
       $("#skill-sphere-container").height($("#landing").height());
       $("#about").height($("#landing").height());
 
@@ -303,19 +339,29 @@
         $("#skill-sphere-container").height($("#landing").height());
         $("#about").height($("#landing").height());
       });
+      // end Dynamic heights
       
+      // After intro animations
       $(".zarif").bind("animationend webkitAnimationEnd", function () {
         $(this).addClass("gradient-text");
       });
       
       $(".anim-delay-2s").bind("animationend webkitAnimationEnd", function () {
         $(".gradient").addClass("gradient-text");
+        $(this).removeClass("anim-delay-2s");
       });
+
+      $(".anim-delay-4s").bind("animationend webkitAnimationEnd", function () {
+        $(this).removeClass("anim-delay-4s");
+      });
+      // end After intro animations
       
+      // Keep gradient onClick
       var gradient = false;
       $(".zarif, .gradient").click(function () {
         $(this).toggleClass("active");
       });
+      // end Keep gradient
     </script>
   </body>
 </html>

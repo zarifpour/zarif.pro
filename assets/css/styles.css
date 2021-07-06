@@ -97,8 +97,7 @@ button,
 body,
 #landing,
 .title-box,
-.text-box
-.gradient,
+.text-box .gradient,
 .footer {
   pointer-events: none;
 }
@@ -207,14 +206,42 @@ canvas {
   text-transform: uppercase;
   /* width: min-content; */
 }
-.title-box, .text-box {
+.title-box,
+.text-box {
   color: rgb(238, 238, 238);
-
 }
 .text-box {
   font-size: 10vw;
   text-transform: none;
 }
+
+.item-box {
+  border: solid 1px gray;
+  border-radius: 8px;
+  padding: 12vw;
+  cursor: pointer;
+  pointer-events: auto;
+  margin: 12vw;
+}
+img {
+  transition: all linear 0.7;
+}
+img.hover-img {
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+  opacity: 0;
+}
+.item-box:hover {
+  background-color: rgba(169, 169, 169, 0.137);
+}
+.item-box:hover img {
+  opacity: 0;
+}
+.item-box:hover .hover-img {
+  opacity: 1;
+}
+
 .button-wrapper {
   display: flex;
   justify-content: center;
@@ -424,5 +451,8 @@ button:hover span::after {
   }
   .zarif-2 {
     font-size: 3.5vw;
+  }
+  .scroll-down {
+    font-size: 12px;
   }
 }
