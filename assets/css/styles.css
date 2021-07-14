@@ -149,6 +149,9 @@ a {
   animation-fill-mode: forwards;
   transition: ease-out;
 }
+.fast-anim {
+  animation-duration: 1s;
+}
 .anim-delay-2s {
   opacity: 0;
   animation-delay: 2s;
@@ -255,8 +258,6 @@ img.hover-img {
   font-weight: bold;
   /* padding: 15px; */
   padding: 12px;
-  margin-left: 20px;
-  margin-right: 20px;
   word-spacing: normal;
   letter-spacing: 5px;
   border: 1px solid white;
@@ -321,7 +322,8 @@ button {
   cursor: pointer;
   background: none;
   padding: 13px;
-  margin: 0px 20px;
+  /* margin: 0px 20px; */
+  margin: 0px 12px;
 }
 
 button::before,
