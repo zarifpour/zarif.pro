@@ -12,6 +12,8 @@ I hope it sufficiently grabbed your attention and I hope this repo helps you bui
 
 * _👉 Reach for the stars_
 
+<a href="https://www.buymeacoffee.com/zarifpour" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" width="150" ></a>
+
 ## 📚 Libraries
 
 * __[jQuery](https://www.goat1000.com/tagcanvas.php)__
