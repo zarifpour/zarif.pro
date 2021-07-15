@@ -1,6 +1,6 @@
 # __[zarif.pro](https://zarif.pro)__
 
-<img src="/assets/logo.png" height="90px">
+<img src="/assets/logo.gif" height="90px">
 
 ![version](https://img.shields.io/badge/version-beta-blue?logo=github) ![](https://visitor-badge.glitch.me/badge?page_id=zarifpour.zarif.pro)
 
