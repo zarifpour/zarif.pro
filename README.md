@@ -2,7 +2,7 @@
 
 <img src="/assets/logo.png" height="90px">
 
-![version](https://img.shields.io/badge/version-beta-blue?logo=github)
+![version](https://img.shields.io/badge/version-beta-blue?logo=github) ![](https://visitor-badge.glitch.me/badge?page_id=zarifpour.zarif.pro)
 
 ## <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px"> Welcome to my Website
 
