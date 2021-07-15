@@ -4,18 +4,32 @@
 
 ![version](https://img.shields.io/badge/version-beta-blue?logo=github)
 
-👋 Welcome to my personal website!
+## 👋 Welcome to my Website
 
-👀 I have stumbled across a ton of amazing sites and I just had to create one for myself.
+I hope it sufficiently grabbed your attention and I hope this repo helps you build a site you can call your own.
 
-🧹 I need to do some cleaning, but I wanted to make the repository public ASAP.
+🧹 I need to add a few more features, some more content, and clean up a bit, but I hope you enjoyed.
 
-🙏 I hope it inspires others to be creative and start their own journeys in software development.
+_👉 Reach for the stars._
 
-## Inspiration
+## 📚 Libraries
+
+* __[jQuery](https://www.goat1000.com/tagcanvas.php)__
+* __[three.js](https://github.com/mrdoob/three.js/)__
+* __[TagCanvas](https://www.goat1000.com/tagcanvas.php)__
+
+## 💡 Inspiration
 
 * __[IOHK](https://iohk.io)__
 * __[Red Stapler](https://www.youtube.com/watch?v=Bed1z7f1EI4&list=LL)__
-* __[Graham Breach](https://www.goat1000.com/tagcanvas.php)__
+* __[Jacek Jeznach](https://jacekjeznach.com/)__
+* __[Graham Breach](https://www.goat1000.com)__
+
+## ℹ️ Icons
+
+* __[Super ⚡️](https://super.so/icons)__ 
+* __[seeklogo](https://seeklogo.com/free-vector-logos)__
 
 ![alt text](https://github.com/zarifpour/zarif.pro/blob/master/assets/site-preview.png?raw=true)
+
+#### Link to site: https://zarif.pro
