@@ -8,9 +8,9 @@
 
 I hope it sufficiently grabbed your attention and I hope this repo helps you build a site you can call your own.
 
-🧹 I need to add a few more features, some more content, and clean up a bit, but I hope you enjoyed.
+* 🧹 I need to add a few more features, some more content, and clean up a bit, but I hope you enjoyed.
 
-_👉 Reach for the stars._
+* _👉 Reach for the stars._
 
 ## 📚 Libraries
 
