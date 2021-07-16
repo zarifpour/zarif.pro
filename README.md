@@ -6,7 +6,7 @@
 
 ## <img src="https://i.pinimg.com/originals/9d/79/f1/9d79f11547a0edd240cf6178e9a5a871.gif" width="25px"> Welcome to my Website
 
-I hope it sufficiently grabbed your attention and I hope this repo helps you build a site you can call your own.
+Did I get your attention? Feel free to use this repository to build a site you can call your own.
 
 * 🧹 I need to add a few more features, some more content, and clean up a bit, but I hope you enjoyed
 
