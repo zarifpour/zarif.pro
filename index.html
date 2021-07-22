@@ -13,8 +13,8 @@
     <script src="/assets/js/jquery-3.6.0.min.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-C6GB8KCC90"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-C6GB8KCC90"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -24,12 +24,14 @@
       gtag("js", new Date());
       
       gtag("config", "G-C6GB8KCC90");
-      </script>
-      <title>Daniel Zarifpour</title>
+    </script>
+    <title>Daniel Zarifpour</title>
   </head>
 
   <body class="noselect">
+
     <a id="fork-me" href="https://github.com/zarifpour/zarif.pro" target="_blank" class="fade-in anim-delay-4-5s" style="position: fixed; right: 0; pointer-events: auto;"><img loading="lazy" width="149" height="149" src="https://github.com/aral/fork-me-on-github-retina-ribbons/blob/master/images/fork-me-right-white@2x.png?raw=true" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    
     <div id="landing" class="flex">
       <div class="title-box no-pointer flex">
         <div class="zarif fade-in gradient">Daniel Zarifpour</div>
@@ -101,21 +103,35 @@
       </div>
     </div>
 
-    <div id="projects" class="flex" style="display: none;">
+    <div id="projects-og" class="flex" style="display: none;">
     <!-- <div id="projects" class="flex" style="margin: 8vw 12vw;"> -->
       <div class="text-box no-pointer to-fade-in fast-anim">
-          <div style="font-size: 3vw; text-transform: none; text-align: center;">Projects</div>
-          <div class="break"></div>
-          <div class="item-box flex">
+        <div style="font-size: 3vw; text-transform: none; text-align: center;">Projects</div>
+        <div class="break"></div>
+        <div class="item-box flex">
             <img src="/assets/zscalp-logo.png" height="90px">
             <img class="hover-img" src="/assets/logo.png" height="90px">
-          </div>
         </div>
       </div>
     </div>
 
+    <div id="projects" class="flex" style="display: none;">
+    <!-- <div id="cards" class="flex" style="margin: 0vw 12vw;"> -->
+      <div class="text-box no-pointer to-fade-in fast-anim">
+        <div class="card flex" style=" background: rgb(6, 6, 8);">
+          <div style="font-size: .3em; text-transform: none;">
+            <p class="card-title" style="">
+              <span><a href="/dapps.html">DApps</a></span>
+            </p>
+            <p class="card-info" style="font-size: .8em; color: rgb(171, 178, 185);">
+              A collection of decentralized applications, including a faucet, an advertisement auction, and a voting app.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
     
-    <div id="skill-sphere-container" class="flex">
+    <div id="skill-sphere" class="flex">
       <canvas
         id="tagcanvas"
         width="560"
@@ -163,10 +179,11 @@
           <li><a href="#premier-pro_">Premier Pro</a></li>
           <li><a href="#truffle_">Truffle</a></li>
           <li><a href="#pyqt_">PyQT</a></li>
-          <li><a href="#Hardhat_">Hardhat</a></li>
+          <li><a href="#hardhat_">Hardhat</a></li>
         </ul>
       </div>
     </div>
+
     <div class="footer">
       <div class="button-wrapper fade-in anim-delay-4s flex">
       <!-- <div class="button-wrapper fade-in flex"> -->
@@ -359,11 +376,12 @@
       // // end Fade out footer
 
       // Dynamic heights for full-page sections
-      $("#skill-sphere-container").height($("#landing").height());
+      $("#skill-sphere").height($("#landing").height());
       $("#about").height($("#landing").height());
+      $("#cards").height($("#landing").height());
 
       $(window).resize(function () {
-        $("#skill-sphere-container").height($("#landing").height());
+        $("#skill-sphere").height($("#landing").height());
         $("#about").height($("#landing").height());
       });
       // end Dynamic heights

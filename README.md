@@ -10,7 +10,7 @@ Did I get your attention? Feel free to use this repository to build a site you c
 
 * 🧹 I need to add a few more features, some more content, and clean up a bit, but I hope you enjoyed
 
-* _👉 Reach for the stars_
+* 👉 _Reach for the stars (and try to tap them on my website)_
 
 <a href="https://www.buymeacoffee.com/zarifpour" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" width="150" ></a>
 
