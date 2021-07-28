@@ -16,7 +16,7 @@ Did I get your attention? Feel free to use this repository to build a site you c
 
 ## 📚 Libraries
 
-* __[jQuery](https://www.goat1000.com/tagcanvas.php)__
+* __[jQuery](https://jquery.com)__
 * __[three.js](https://github.com/mrdoob/three.js/)__
 * __[TagCanvas](https://www.goat1000.com/tagcanvas.php)__
 
